@@ -1,3 +1,5 @@
+zstyle ':completion:*' menu select
+
 # Vars
 	HISTFILE=~/.zsh_history
 	SAVEHIST=10000
