@@ -1,10 +1,22 @@
+# Bash-like ^k and ^y
+bindkey "^k" kill-line
+bindkey "^y" vi-put-before
+
 # up
 function up_widget() {
 	BUFFER="cd .."
 	zle accept-line
 }
 zle -N up_widget
-bindkey "^k" up_widget
+bindkey "^u" up_widget
+
+# Clear
+function ctrl_l() {
+    BUFFER="clear"
+    zle accept-line
+}
+zle -N ctrl_l
+bindkey "^l" ctrl_l
 
 # Sudo
 function add_sudo() {

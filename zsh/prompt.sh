@@ -9,6 +9,14 @@ set_prompt() {
 	# [
 	PS1="["
 
+    # Rosetta indicator
+	if [ $(uname -s) = 'Darwin' ]; then
+		local IS_ARM=$(sysctl -n hw.optional.arm64 2>/dev/null || echo 0)
+		if [ $IS_ARM -eq 1 ] && [ $(uname -m) = 'x86_64' ]; then
+			PS1="🌹 ${PS1}"
+		fi
+	fi
+
 	# Path: http://stevelosh.com/blog/2010/02/my-extravagant-zsh-prompt/
 	PS1+="%{$fg_bold[blue]%}${PWD/#$HOME/~}%{$reset_color%}"
 
