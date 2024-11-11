@@ -1,12 +1,14 @@
 zstyle ':completion:*' menu select
 
 # Vars
-	HISTFILE=~/.zsh_history
-	SAVEHIST=10000
-	setopt APPEND_HISTORY
-	setopt SHARE_HISTORY
-	setopt HIST_EXPIRE_DUPS_FIRST
-	setopt EXTENDED_HISTORY
+HISTFILE=~/.zsh_history
+HISTSIZE=10000
+SAVEHIST=10000
+setopt INC_APPEND_HISTORY
+setopt APPEND_HISTORY
+setopt SHARE_HISTORY
+setopt HIST_EXPIRE_DUPS_FIRST
+setopt EXTENDED_HISTORY
 
 # Aliases
 if [ "$(uname -s)" = "Darwin" ]; then
@@ -30,6 +32,8 @@ source ~/dotfiles/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zs
 source ~/dotfiles/env-vars.env
 source ~/dotfiles/zsh/prompt.sh
 source ~/dotfiles/zsh/keybindings.sh
+
+# THE FOLLOWING DOESN'T WORK BECAUSE OF THE VI MODE...
 
 # Fix for arrow-key searching
 # start typing + [Up-Arrow] - fuzzy find history forward
